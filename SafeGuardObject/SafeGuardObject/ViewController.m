@@ -18,12 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self testDictionary];
 }
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testString];
-}
 
 
 - (void)testArray {
@@ -35,6 +33,14 @@
 
 - (void)testDictionary {
     
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"key1", @"value1", nil];
+    NSLog(@"%@", dic[@"11"]);
+    
+    
+    NSMutableDictionary *muDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"key1", @"value1", nil];
+    [muDic setValue:nil forKey:@"key2"];
+    [muDic setObject:nil forKey:@"key2"];
+    NSLog(@"%@", muDic[@"value"]);
 }
 
 - (void)testString {
